@@ -11,5 +11,6 @@ services:
       - TZ='Asia/Taipei'
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
+      - ./data:/var/lib/mysql
     stdin_open: true
     tty: true
