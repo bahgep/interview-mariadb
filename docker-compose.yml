@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mariadb:
+    image: mariadb:10.5
+    container_name: mariadb02
+    ports:
+      - 3316:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=12345678
+      - TZ='Asia/Taipei'
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+    stdin_open: true
+    tty: true
